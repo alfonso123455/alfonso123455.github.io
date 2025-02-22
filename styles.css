@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+  --table-background-color: #991e1e;
+  --primary-color: #abb817;
+  --table-border-color: #dee6e6;
+  --table-row-hover-color: #e2e6ea;
+  --primary-hover-color: #138496;
+  --delete-color: #9a0e1c;
+  --delete-hover-color: #7b0611;
+  --accept-color: #00ff99;
+  --accept-hover-color: #00c3d9;
+  --cancel-color: #6c757d;
+  --cancel-hover-color: #5a6268;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "inter", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.table-content {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--table-background-color);
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.title {
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid var(--table-border-color);
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+th,
+td::first-letter {
+  text-transform: uppercase;
+}
+
+th {
+  background-color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--table-background-color);
+}
+
+tr:hover {
+  background-color: var(--table-row-hover-color);
+  transition: background-color 0.2 linear;
+}
+
+td img {
+  width: 80px;
+  scale: 1.3;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  color: var(--table-background-color);
+  padding: 12px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--primary-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-hover-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit {
+  background-color: var(--primary-color);
+}
+
+.btn-edit:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btn-delete {
+  background-color: var(--delete-color);
+}
+
+.btn-delete:hover {
+  background-color: var(--delete-hover-color);
+}
+
+.btn-accept {
+  background-color: var(--accept-color);
+  display: none;
+}
+
+.btn-accept:hover {
+  background-color: var(--accept-hover-color);
+}
+
+.btn-cancel {
+  background-color: var(--cancel-color);
+  color: var(--table-background-color);
+  display: none;
+}
+
+.btn-cancel:hover {
+  background-color: var(--cancel-hover-color);
+}
+
+.fas {
+  margin: 0 8px;
+}
+
+@media (max-width: 1200px) {
+  .table-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 910px) {
+  .table-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 603px) {
+  body {
+    padding: 5px;
+    margin: 0;
+  }
+
+  .table-content {
+    padding: 10px;
+    width: 100%;
+  }
+
+  th,
+  td {
+    font-size: 10px;
+  }
+
+  td img {
+    width: 40px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .btn-group {
+    gap: 4px;
+  }
+}
