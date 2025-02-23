@@ -1,4 +1,5 @@
 "use strict";
+fetchData();
 
 let params = null;
 let colsEdit = null;
