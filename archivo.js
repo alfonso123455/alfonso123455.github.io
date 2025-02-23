@@ -15,7 +15,10 @@ const colEdicHtml = `
 
 const fetchPokemonData = async (pokemonName) => {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/}`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}}`);
+                     //      `https://pokeapi.co/api/v2/pokemon/}`
+                    //link correcto con los datos en la api de los pokemons
+
     return response.ok
       ? await response.json()
       : console.warn("Pokemon not found:", pokemonName);
